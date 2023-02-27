@@ -1,6 +1,11 @@
 vim.g.mapleader = " "
 
+-- Open file explorer
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- Cycle tabs
+vim.keymap.set("n", "<C-]>", vim.cmd.tabn)
+vim.keymap.set("n", "<C-[>", vim.cmd.tabp)
 
 -- Move blocks of text
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
