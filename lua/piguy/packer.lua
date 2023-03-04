@@ -18,6 +18,9 @@ return require("packer").startup(function(use)
 
 	use("mhartington/formatter.nvim")
 
+	use("neovim/nvim-lspconfig")
+	use("sigmasd/deno-nvim")
+
 	use("ThePrimeagen/harpoon")
 
 	use("metakirby5/codi.vim")
