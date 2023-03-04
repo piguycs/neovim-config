@@ -47,3 +47,5 @@ vim.api.nvim_set_keymap("i", "\"", "\"\"<Esc>i", { noremap = true })
 
 -- Formatter
 vim.keymap.set("n", "=", vim.cmd.Format)
+
+vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
