@@ -16,6 +16,8 @@ return require("packer").startup(function(use)
 
 	use("laytan/cloak.nvim")
 
+	use("andweeb/presence.nvim")
+
 	use("mhartington/formatter.nvim")
 
 	use("neovim/nvim-lspconfig")
