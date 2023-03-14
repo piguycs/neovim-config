@@ -8,7 +8,9 @@ require("formatter").setup({
 			function()
 				return {
 					exe = "rustfmt",
-					args = {},
+					args = {
+						"--edition 2021",
+					},
 					stdin = true,
 				}
 			end,
@@ -44,8 +46,21 @@ require("formatter").setup({
 				}
 			end,
 		},
+		astro = {
+			function()
+				return {
+					exe = "prettier",
+					args = {
+						"--stdin-filepath",
+						util.escape_path(util.get_current_buffer_file_path()),
+					},
+					stdin = true,
+					try_node_modules = true,
+				}
+			end,
+		},
 		["*"] = {
-      require("formatter.filetypes.any").remove_trailing_whitespace
+			require("formatter.filetypes.any").remove_trailing_whitespace,
 		},
 	},
 })

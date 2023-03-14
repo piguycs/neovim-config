@@ -38,7 +38,7 @@ end)
 
 -- Auto close brackets
 vim.api.nvim_set_keymap("i", "(", "()<Esc>i", { noremap = true })
-vim.api.nvim_set_keymap("i", "{", "{}<Esc>i", { noremap = true })
+-- vim.api.nvim_set_keymap("i", "{", "{}<Esc>i", { noremap = true })
 vim.api.nvim_set_keymap("i", "{<CR>", "{<CR>}<Esc>O", { noremap = true })
 vim.api.nvim_set_keymap("i", "[", "[]<Esc>i", { noremap = true })
 vim.api.nvim_set_keymap("i", "<", "<><Esc>i", { noremap = true })
@@ -49,3 +49,6 @@ vim.api.nvim_set_keymap("i", "\"", "\"\"<Esc>i", { noremap = true })
 vim.keymap.set("n", "=", vim.cmd.Format)
 
 vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
+
+-- Terminal
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true })

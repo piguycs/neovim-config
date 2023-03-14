@@ -7,6 +7,24 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
+	-- Lua
+	use({
+		"KadoBOT/nvim-spotify",
+		requires = "nvim-telescope/telescope.nvim",
+		config = function()
+			local spotify = require("nvim-spotify")
+
+			spotify.setup({
+				-- default opts
+				status = {
+					update_interval = 10000, -- the interval (ms) to check for what's currently playing
+					format = "%s %t by %a", -- spotify-tui --format argument
+				},
+			})
+		end,
+		run = "make",
+	})
+
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
@@ -15,6 +33,10 @@ return require("packer").startup(function(use)
 	})
 
 	use("laytan/cloak.nvim")
+
+	-- use("jiangmiao/auto-pairs")
+
+	--use({ "codota/tabnine-nvim", run = "./dl_binaries.sh" })
 
 	use("andweeb/presence.nvim")
 
@@ -62,7 +84,15 @@ return require("packer").startup(function(use)
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("nvim-treesitter/nvim-treesitter-context")
-	use("folke/trouble.nvim")
+
+	use({
+		"folke/trouble.nvim",
+		config = function()
+			require("trouble").setup({
+				icons = false,
+			})
+		end,
+	})
 
 	use("Eandrju/cellular-automaton.nvim")
 
