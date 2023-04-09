@@ -34,17 +34,19 @@ return require("packer").startup(function(use)
 
 	use("laytan/cloak.nvim")
 
-	-- use("jiangmiao/auto-pairs")
+	-- leap for optimising my ksystrokes ._.
+	use("ggandor/leap.nvim")
 
-	--use({ "codota/tabnine-nvim", run = "./dl_binaries.sh" })
+	use("github/copilot.vim")
+	--	use({ "codota/tabnine-nvim", run = "./dl_binaries.sh" })
 
 	use("andweeb/presence.nvim")
 
 	use("mhartington/formatter.nvim")
 
 	use("neovim/nvim-lspconfig")
-	use("sigmasd/deno-nvim")
 
+  -- this is the GOAT
 	use("ThePrimeagen/harpoon")
 
 	use("metakirby5/codi.vim")
@@ -77,10 +79,9 @@ return require("packer").startup(function(use)
 
 	use("navarasu/onedark.nvim")
 
-	use({
-		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-	})
+	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
+	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
+	use("tiagovla/scope.nvim")
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("nvim-treesitter/nvim-treesitter-context")
@@ -98,7 +99,7 @@ return require("packer").startup(function(use)
 
 	use("mbbill/undotree")
 
-	use("mattn/emmet-vim")
+	-- use("mattn/emmet-vim")
 
 	use("tpope/vim-fugitive")
 

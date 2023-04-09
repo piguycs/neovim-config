@@ -4,8 +4,9 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- Cycle tabs
-vim.keymap.set("n", "<C-]>", vim.cmd.tabn)
-vim.keymap.set("n", "<C-[>", vim.cmd.tabp)
+vim.keymap.set("n", "<C-]>", vim.cmd.bnext)
+vim.keymap.set("n", "<C-[>", vim.cmd.bprevious)
+vim.keymap.set("n", "<C-x>", vim.cmd.bdelete)
 
 -- Move blocks of text
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -43,7 +44,7 @@ vim.api.nvim_set_keymap("i", "{<CR>", "{<CR>}<Esc>O", { noremap = true })
 vim.api.nvim_set_keymap("i", "[", "[]<Esc>i", { noremap = true })
 vim.api.nvim_set_keymap("i", "<", "<><Esc>i", { noremap = true })
 vim.api.nvim_set_keymap("i", "'", "''<Esc>i", { noremap = true })
-vim.api.nvim_set_keymap("i", "\"", "\"\"<Esc>i", { noremap = true })
+vim.api.nvim_set_keymap("i", '"', '""<Esc>i', { noremap = true })
 
 -- Formatter
 vim.keymap.set("n", "=", vim.cmd.Format)
@@ -51,4 +52,4 @@ vim.keymap.set("n", "=", vim.cmd.Format)
 vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
 
 -- Terminal
-vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
+vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true })

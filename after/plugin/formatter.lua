@@ -3,6 +3,17 @@ local defaults = require("formatter.defaults")
 
 require("formatter").setup({
 	filetype = {
+		xml = {
+			function()
+				return {
+					exe = "xmlformat",
+					args = {
+						util.escape_path(util.get_current_buffer_file_path())
+					},
+					stdin = true,
+				}
+			end,
+		},
 		rust = {
 			require("formatter.filetypes.rust").rustfmt,
 			function()
