@@ -25,6 +25,20 @@ return require("packer").startup(function(use)
 		run = "make",
 	})
 
+	-- Lua
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 1000
+			require("which-key").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
@@ -46,7 +60,7 @@ return require("packer").startup(function(use)
 
 	use("neovim/nvim-lspconfig")
 
-  -- this is the GOAT
+	-- this is the GOAT
 	use("ThePrimeagen/harpoon")
 
 	use("metakirby5/codi.vim")
@@ -69,11 +83,18 @@ return require("packer").startup(function(use)
 		tag = "nightly", -- optional, updated every week. (see issue #1193)
 	})
 
+	-- use({
+	-- 	"startup-nvim/startup.nvim",
+	-- 	requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	-- 	config = function()
+	-- 		require("startup").setup({ theme = "dashboard" }) -- put theme name here
+	-- 	end,
+	-- })
 	use({
-		"startup-nvim/startup.nvim",
-		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+		"goolord/alpha-nvim",
+		requires = { "nvim-tree/nvim-web-devicons" },
 		config = function()
-			require("startup").setup({ theme = "dashboard" }) -- put theme name here
+			require("alpha").setup(require("alpha.themes.startify").config)
 		end,
 	})
 

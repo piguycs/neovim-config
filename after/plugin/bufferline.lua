@@ -10,7 +10,7 @@ require("bufferline").setup({
 		show_buffer_close_icons = true,
 		hover = {
 			enabled = false,
-			delay = 200,
+			delay = 0,
 			reveal = { "close" },
 		},
 		offsets = {

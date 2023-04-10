@@ -5,8 +5,9 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- Cycle tabs
 vim.keymap.set("n", "<C-]>", vim.cmd.bnext)
+vim.keymap.set("n", "H", vim.cmd.bnext)
 vim.keymap.set("n", "<C-[>", vim.cmd.bprevious)
-vim.keymap.set("n", "<C-x>", vim.cmd.bdelete)
+vim.keymap.set("n", "L", vim.cmd.bprevious)
 
 -- Move blocks of text
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -27,7 +28,7 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- Space + s to replace the word I am currently on
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>v", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Space + x to make curent file into an executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
